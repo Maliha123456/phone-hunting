@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.11/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <header>
+
+   </header> 
+   <main class="container mx-auto mt-10">
+
+    <!-- search bar  -->
+    <div class="bg-slate-700 rounded-md p-5 mx-3 my-6 space-x-3">
+        <input id="search-Field" type="text" placeholder="Search here..." class="text-xl input input-bordered w-full max-w-xs" />
+        <button onclick="handleSearch()" class="btn btn-primary">Search</button>
+    </div>
+
+
+<!-- phone container  -->
+  <section>
+    <!-- loader or spinner  -->
+     <div id="spinnerLoader" class="text-center my-10 hidden">
+        <span class="loading loading-dots loading-lg"></span>
+     </div>
+    <!-- phone container  -->
+    <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-3">
+    </div>
+    <!-- view all btn  -->
+    <div id="viewAll-container" class="text-center mt-5 hidden">
+        <button onclick="handleShowAll()" class="btn btn-lg btn-primary bg-cyan-700 text-white text-2xl">View All</button>
+    </div>
+  </section>
+<!-- show details modal  -->
+<div>
+    <!-- Open the modal using ID.showModal() method -->
+
+<dialog id="show_Detail_Modal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <h3 id="phone-name" class="text-3xl font-bold"></h3>
+    <div id="show-detail-container">
+   
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+</div>
+   </main>
+
+    <script src="api.js"></script>
+</body>
+</html>
